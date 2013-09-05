@@ -10,7 +10,6 @@
     this.route('forms');
     this.route('actions');
     this.resource('fruits', function() {
-      this.route('all');
       this.resource('fruit', { path: '/:fruit_id' });
     });
   });
