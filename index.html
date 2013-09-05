@@ -31,7 +31,7 @@
   <script type="text/x-handlebars" id="fruits">
     <h1>Fruits</h1>
     {{#each model}}
-      {{name}}
+      {{#link-to 'fruit' this}}{{id}}{{/link-to}}
     {{/each}}
     {{outlet}}
   </script>
@@ -42,13 +42,7 @@
 
   <script type="text/x-handlebars" id="fruit">
     <h1>Fruit</h1>
-    {{#if isModelEmpty}}
-      {{#each model}}
-        <h2>{{name}}</h2>
-      {{/each}}
-    {{else}}
-      No fruit found
-    {{/if}}
+        <h2>{{id}}</h2>
   </script>
 
   <script src="js/jquery.js"></script>

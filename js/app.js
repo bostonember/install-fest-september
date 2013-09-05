@@ -1,10 +1,10 @@
 (function() {
   var App = Ember.Application.create(),
-      fruits = [{
-        name: 'apple'
-      }, {
-        name: 'banana'
-      }];
+    fruits = [{
+      id: 'apple'
+    }, {
+      id: 'banana'
+    }];
 
   App.Router.map(function() {
     this.route('forms');
@@ -31,7 +31,7 @@
 
   App.FruitRoute = Ember.Route.extend({
     model: function(params) {
-      return fruits.filterBy('name', params.fruit_id);
+      return fruits.filterBy('id', params.fruit_id)[0];
     }
   });
 
