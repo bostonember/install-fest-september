@@ -16,14 +16,23 @@
 
   <script type="text/x-handlebars" id="forms">
     <h1>Forms</h1>
+    {{input value=name}}
+    <p>
+      My name is {{name}}.
+    </p>
   </script>
 
   <script type="text/x-handlebars" id="actions">
     <h1>Actions</h1>
+    Property: {{red}}
+    <button {{action "toggleColor"}}>Toggle it</button>
   </script>
 
   <script type="text/x-handlebars" id="fruits">
     <h1>Fruits</h1>
+    {{#each model}}
+      {{name}}
+    {{/each}}
     {{outlet}}
   </script>
 
@@ -33,6 +42,13 @@
 
   <script type="text/x-handlebars" id="fruit">
     <h1>Fruit</h1>
+    {{#if isModelEmpty}}
+      {{#each model}}
+        <h2>{{name}}</h2>
+      {{/each}}
+    {{else}}
+      No fruit found
+    {{/if}}
   </script>
 
   <script src="js/jquery.js"></script>
